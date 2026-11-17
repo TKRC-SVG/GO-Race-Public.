@@ -1,0 +1,313 @@
+/* GO! palette inspired by Evernote: green, charcoal, white and warm gray. */
+:root{--bg:#f6f5f4;--panel:#fff;--panel2:#f6f5f4;--line:#e2e2e2;--muted:#787878;--text:#262626;--evernote-green:#00a82d;--accent:#008a25;--blue:var(--accent);--lime:var(--blue);--orange:#008a25;--cyan:var(--blue);--green:#232323;--red:#008a25;--radius:12px;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--page-gutter:max(4vw,calc(50vw - 680px));color-scheme:light}
+body{background:#fff;color:var(--text);font-family:var(--sans)}
+button,input,select{font-family:inherit;touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #008a25;outline-offset:3px}
+button:disabled{cursor:default;opacity:.6}
+a{color:var(--blue)}
+.shell{padding:0 4vw 32px;max-width:1450px}
+.topbar{container-type:inline-size;padding:0;gap:0 18px;background:#000;color:#fff;border:0;box-shadow:0 3px 12px #23232318;-webkit-backdrop-filter:none;backdrop-filter:none}
+.topbar::before{content:none;animation:none}
+.topbar .brand{margin-left:var(--page-gutter);padding:5px 0;gap:14px;min-height:64px;color:#fff}
+.brand-wordmark{flex:none;color:#fff;font:900 italic 54px/1 Arial,Helvetica,sans-serif;letter-spacing:-4px}
+.topbar .brand-caption{color:#fff;font-size:22px;letter-spacing:0;text-transform:none;font-weight:750}
+.topbar .brand-motto{display:inline-flex;align-items:center;gap:3px;color:#dbdbdb;font-size:12px;letter-spacing:.02em;max-width:none;line-height:1}
+.brand-motto-logo{display:block;width:32px;height:16px;object-fit:cover;object-position:center;filter:invert(1)}
+.topbar .top-actions{margin-right:var(--page-gutter);gap:10px}
+.topbar .revision-badge{padding:0;border:0;border-radius:0;color:#dbdbdb;background:transparent;font:600 12px var(--sans)}
+.topbar .top-actions .button{font-size:13px;min-height:38px;padding:8px 12px}
+.topbar .brand{min-height:64px}
+.topbar .top-actions{display:flex;align-self:center;align-items:center;justify-content:flex-end;padding:0}
+.header-searches{padding:8px var(--page-gutter);gap:8px;background:#000;border-bottom:0;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center}
+.header-picker-summary,.topbar.selection-ready .header-picker-summary{height:42px;min-height:42px;padding:4px 8px;border:1px solid var(--line);border-radius:12px;background:#fff;gap:5px}
+.header-picker-state:not([hidden]){display:flex;min-width:0;flex:1}
+.header-picker-summary:hover,.header-picker[open]>.header-picker-summary{background:#fff;border-color:var(--blue);box-shadow:0 0 0 2px #008a2520}
+.picker-label{color:#232323;font:700 12px var(--sans);letter-spacing:0}
+.picker-current strong{color:var(--text);font-size:15px;font-weight:700}
+.picker-current small{color:#787878;font-size:11px}
+.topbar .picker-current small.category-assigned{color:var(--blue);font-size:11px;font-weight:700}
+.picker-arrow{color:#686868}
+.picker-popover{border-color:var(--line);border-radius:12px;background:#fff;box-shadow:0 8px 30px #18181826;-webkit-backdrop-filter:none;backdrop-filter:none;max-height:calc(100vh - var(--topbar-height,160px) - 20px);max-height:calc(100svh - var(--topbar-height,160px) - 20px)}
+.picker-popover-head strong{font-size:16px;color:var(--text)}
+.picker-popover-head small,.browser-help,.pilot-help,.browser-status,.browser-event-meta{font-size:12px;color:#686868}
+.button,.button.subtle{background:#fff;color:#262626;border:1px solid var(--line);border-radius:8px;font-size:13px;padding:10px 14px;transform:none}
+.button:hover,.button.subtle:hover{background:#eef8f0;color:#262626;border-color:#b9ddc2;transform:none}
+.button.primary,.category-button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.button.primary:hover{background:#006e1d;color:#fff;border-color:#006e1d}
+.button.small{font-size:12px;padding:8px 11px}
+.pill,.dashboard-state{border-color:var(--line);background:#f7f7f7;color:#686868;font-size:11px}
+.eyebrow,.tiny-icon,.icon-upload,.time-box,.scratch-main .metric-value,.rank-pair b{color:var(--blue)}
+.dashboard-heading h2{color:var(--text);font-size:23px;letter-spacing:-.4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:none}
+.card-title{color:#262626;font:700 14px var(--sans);letter-spacing:0;text-transform:none}
+.card-head{margin-bottom:16px}
+.now-card{background:#eef8f0;border-top:3px solid var(--blue)}
+.now-card:after{content:none}
+.now-card .card-title,.next-card .card-title{color:var(--blue)}
+.now-kicker,.now-desc,.now-foot,.next-schedule,.next-countdown-hint,.scratch-note,.upload-intro,.docs-foot,.footnote{color:#686868}
+.now-value,.now-stat strong,.summary-block strong,.next-person strong,.next-run-label,.upload-copy strong,.doc-item strong,.phase-result-title strong{color:var(--text)}
+.now-value{font-size:30px;font-weight:750;letter-spacing:-.6px}
+.now-desc{font-size:14px;line-height:1.6}
+.now-foot{font-size:11px;border-color:#c5e3cd}
+.now-kicker,.now-stat span,.metric-label,.summary-block span{font:600 11px var(--sans);letter-spacing:.02em;color:#686868}
+.race-symbol{background:#c92739;color:#fff;border:0;border-radius:8px;transform:none;font:900 italic 28px Arial,sans-serif}
+.now-stat,.scratch-grid,.scratch-metric,.summary-block,.phase-results,.phase-result,.next-countdown{border-color:var(--line);border-radius:8px}
+.now-stat{background:#fff}
+.next-card{background:#fff;border:1px solid var(--line)}
+.next-countdown{background:#f7f7f7}
+.next-countdown strong{color:var(--blue)}
+.next-tag{border-color:#b9ddc2;background:#eef8f0;color:#008a25}
+.avatar,.doc-icon{background:#e5f4e9;color:var(--blue);border-radius:8px}
+.scratch-card{background:#fff;border-color:var(--line)}
+.scratch-grid,.summary-block{background:#f7f7f7}
+.scratch-metric{border-radius:0}
+.metric-value,.scratch-note b{color:var(--text)}
+.metric-value em,.metric-label,.progress-copy,.upload-copy small,.upload-status,.doc-item small{color:#787878}
+.progress-track{background:#dceee1}.progress-fill{background:var(--blue)}
+.phase-tab,.category-button{background:#fff;color:#262626;border-color:var(--line);border-radius:8px;font-size:12px}
+.phase-tab.active{background:#e5f4e9;border-color:#b9ddc2;color:var(--blue)}
+.phase-result-title span{background:#eef8f0;color:var(--blue)}
+.phase-result-order b{color:var(--blue)}
+.phase-result-order li,.phase-result-title strong{font-size:12px}
+.phase-result-meta,.phase-result-note,.phase-results-empty{font-size:11px;color:#787878}
+.upload-row,.reference-block,.pilot-section,.browser-section,.browser-day{border-color:var(--line)}
+.upload-intro{font-size:13px}.upload-copy strong{font-size:13px}.upload-copy small,.upload-status,.docs-foot{font-size:11px}
+.doc-item,.everlaps-browser,.selected-race,.install-modal-hint{background:#f7f7f7;border-color:var(--line);border-radius:8px}
+.doc-item strong{font-size:12px}.doc-item small{font-size:11px}
+.event-state,.pilot-category-chip{color:var(--blue);background:#e5f4e9;border-color:#b9ddc2}
+.field-label,.inline-title{color:#262626;font-size:13px}
+.race-search-row input,.pilot-select-row select,.browser-date-row input,.modal input[type=url]{border-color:var(--line);border-radius:8px;background:#fff;color:var(--text);font-size:14px}
+.race-search-row input:focus,.pilot-select-row select:focus,.modal input[type=url]:focus{border-color:var(--blue);box-shadow:0 0 0 2px #008a2520}
+.browser-section-title,.browser-day-label,.browser-calendar-details>summary:after{color:var(--blue)}
+.browser-event{border-color:var(--line);border-radius:8px}.browser-event-title{font-size:14px;color:#262626}
+.browser-race{background:#eef8f0;border-color:#b9ddc2;color:var(--blue);font-size:12px}
+.browser-race:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.browser-everlaps-link{background:var(--blue);border-color:var(--blue);border-radius:8px;font-size:12px}
+.browser-everlaps-link:hover{background:#006e1d}
+.browser-shortcuts .button{font-size:11px}
+.live-chip,.now-stat.now-stat-live{background:#eef8f0;border-color:#b9ddc2;color:#008a25}
+.now-stat.now-stat-live span,.now-stat.now-stat-live strong{color:#008a25}
+.toast{background:#232323;border-radius:8px;font-size:13px;max-width:calc(100vw - 24px);box-shadow:0 8px 30px #0003}
+.modal{border-color:var(--line);border-radius:12px}.modal-backdrop{background:#181818c4}
+.sync-status{font-size:11px;color:#686868;display:inline-flex;align-items:center;gap:6px}
+.sync-status::before{content:"";width:6px;height:6px;background:#787878;border-radius:50%;flex:none}
+.sync-status[data-state=ready]::before{background:#232323}
+.sync-status[data-state=pending]::before{background:#008a25}
+.sync-status[data-state=error]::before{background:#008a25}
+@media(max-width:620px){
+ .shell{padding:0 12px 24px}.topbar{gap:0 8px}.topbar .brand{margin-left:12px;gap:8px;padding:3px 0;min-height:50px}
+ .brand-wordmark{font-size:42px;letter-spacing:-3px}.topbar .brand-caption{font-size:16px}.topbar .brand-motto{font-size:10px}
+ .topbar .top-actions{margin-right:12px;gap:5px;flex-direction:row;align-items:center;flex-wrap:nowrap}
+ .topbar .brand{min-height:50px}.topbar .top-actions{display:flex;padding:0;justify-content:flex-end}.brand-motto-logo{width:24px;height:12px}
+ .topbar .revision-badge{font-size:10px;padding:0}.topbar .top-actions .button{font-size:11px;min-height:34px;padding:7px 9px;max-width:130px;white-space:normal}
+ .header-searches{padding:6px 12px 8px;gap:4px;grid-template-columns:repeat(4,minmax(0,1fr))}
+ .header-picker-summary,.topbar.selection-ready .header-picker-summary{display:flex;gap:3px;height:34px;min-height:34px;padding:3px 4px;border-radius:10px}
+ .picker-label{flex:none;grid-column:auto;font-size:10px}.header-picker-summary .picker-current{grid-column:auto;flex:1;min-width:0}.picker-arrow{grid-column:2;grid-row:1/3}
+ .header-picker-summary .picker-current strong{font-size:11px;line-height:1.2;white-space:nowrap;overflow-wrap:normal;display:block;overflow:hidden;text-overflow:ellipsis;-webkit-line-clamp:unset}
+ .header-picker-summary .picker-current small,.topbar .picker-current small.category-assigned{font-size:9px}.picker-popover{width:calc(100vw - 24px)}
+ .card{padding:14px;border-radius:12px}.card-title{font-size:14px}.now-value{font-size:25px}.now-desc{font-size:13px}
+ .now-stat span{font-size:10px}.now-stat strong{font-size:12px}.phase-tab{font-size:11px}.now-foot{font-size:10px}
+ .scratch-metric:first-child,.scratch-metric:nth-child(2){border-color:var(--line)}
+ .race-search-row input,.pilot-select-row select,.browser-date-row input,.modal input[type=url]{font-size:16px}
+ .browser-head{flex-wrap:wrap}.browser-badge{white-space:normal;font-size:10px}.app-actions .button{font-size:12px}
+ .sync-status{font-size:10px}.footnote{font-size:10px}
+}
+.app-update-control{position:relative;min-width:0;max-width:none;flex:0 0 auto;display:flex;flex-direction:column;align-items:stretch;gap:0;width:clamp(74px,7vw,98px)}
+.topbar .app-update-control #updateApp{display:block;width:100%;height:34px;min-height:34px;max-width:none;padding:2px 4px;border-radius:9px;font-size:11px;line-height:1;white-space:nowrap}
+.app-install-control{position:relative;min-width:0;max-width:none;flex:0 0 auto;display:flex;flex-direction:column;align-items:stretch;gap:0;width:clamp(74px,7vw,98px)}
+.topbar .app-install-control #installApp{display:block;width:100%;height:34px;min-height:34px;max-width:none;padding:2px 4px;border-radius:9px;font-size:11px;line-height:1;white-space:nowrap}
+#updateApp.has-update{background:#b82336!important;border-color:#b82336!important;color:#fff!important;animation:tkrc-update-heartbeat 1.8s ease-in-out infinite;transform-origin:center}
+#updateApp.has-update:hover{background:#a31e30!important;color:#fff!important}
+#updateApp.is-updating{background:#008a25;border-color:#008a25;color:#fff;opacity:1;animation:none;transform:none}
+.app-update-status{position:absolute;top:calc(100% + 8px);right:0;z-index:32;width:min(300px,calc(100vw - 24px));min-width:0;max-width:calc(100vw - 24px);padding:9px 11px;border:1px solid #b9ddc2;border-radius:8px;background:#eef8f0;color:#008a25;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.4;text-align:left}
+.app-update-status strong{font-weight:650}.app-update-status small{font-size:11px;color:#686868}
+.app-update-track{display:block;width:100%;height:5px;border-radius:4px;background:linear-gradient(90deg,#dceee1 0%,#dceee1 25%,#008a25 45%,#008a25 55%,#dceee1 75%,#dceee1 100%);background-size:250% 100%;animation:tkrc-app-update-progress 1.3s linear infinite}
+.app-update-track.is-complete{background:#008a25;animation:none}
+.app-update-status.is-error{background:#fff;color:#262626}
+@keyframes tkrc-update-heartbeat{0%,35%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(184,35,54,0)}10%,25%{transform:scale(1.07);box-shadow:0 0 0 5px rgba(184,35,54,.18)}18%{transform:scale(1.02)}}
+@keyframes tkrc-app-update-progress{from{background-position:100% 0}to{background-position:0 0}}
+@media(max-width:620px){.topbar .brand{margin-left:8px;gap:6px}.brand-wordmark{font-size:38px;letter-spacing:-3px}.topbar .brand-caption{font-size:13px}.topbar .brand-motto{font-size:8px}.brand-motto-logo{width:20px;height:10px}.topbar .top-actions{margin-right:8px;gap:4px;transform:translateY(-5px)}.topbar .app-update-control,.topbar .app-install-control{width:clamp(48px,14vw,56px)}.topbar .app-update-control #updateApp,.topbar .app-install-control #installApp{height:30px;min-height:30px;padding:2px 3px;border-radius:8px;font-size:8.5px}.app-update-status{width:min(300px,calc(100vw - 24px));max-width:calc(100vw - 24px);font-size:11px;padding:7px 8px}.app-update-status small{font-size:10px}}
+@media(max-width:380px){.topbar{gap:0 5px}.topbar .brand{margin-left:7px;gap:4px}.brand-wordmark{font-size:34px;letter-spacing:-2px}.topbar .brand-caption{font-size:12px}.topbar .brand-motto{font-size:7px}.brand-motto-logo{width:18px;height:9px}.topbar .top-actions{margin-right:7px;gap:3px}.topbar .revision-badge{display:none}.topbar .app-update-control,.topbar .app-install-control{width:45px}.topbar .app-update-control #updateApp,.topbar .app-install-control #installApp{font-size:8px;padding:2px}}
+@media(prefers-reduced-motion:reduce){#updateApp.has-update,.live-chip .status-dot{animation:none}#updateApp.has-update{outline:3px solid #eaa2ab;outline-offset:2px}.app-update-track{animation-duration:3s}}
+
+/* Keep the app controls compact and aligned with the GO! Race Control title. */
+.topbar .top-actions{transform:translateY(-4px)}
+@media(max-width:620px){.topbar .top-actions{transform:translateY(-5px)}}
+
+/* En móvil, el selector del piloto se alinea con la pantalla y no con la tarjeta central. */
+@media(max-width:620px){
+ #pilotPicker .picker-popover{position:fixed;top:calc(var(--topbar-height,160px) + 8px);left:12px;right:12px;width:auto;max-height:calc(100vh - var(--topbar-height,160px) - 20px);max-height:calc(100svh - var(--topbar-height,160px) - 20px)}
+
+}
+
+/* Selector de carreras: lista breve y ayuda bajo demanda. */
+.picker-popover-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.picker-popover-head>strong{font-size:16px}
+.picker-info,.browser-live-info{position:relative;flex:none}
+.picker-info>summary,.browser-live-info>summary{list-style:none;cursor:pointer;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--blue);font-weight:800}
+.picker-info>summary::-webkit-details-marker,.browser-live-info>summary::-webkit-details-marker{display:none}
+.picker-info>summary{width:28px;height:28px;font-size:14px}
+.picker-info-copy{position:absolute;z-index:25;top:calc(100% + 7px);right:0;width:min(260px,calc(100vw - 48px));padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#686868;font-size:12px;line-height:1.45;box-shadow:0 8px 24px #18181820}
+.everlaps-browser{margin:0;padding:0;border:0;background:transparent}
+.browser-head{align-items:center;margin-bottom:8px}
+.browser-head .field-label{margin:0;font-size:13px}
+.browser-head .browser-status{margin:0;font-size:11px;line-height:1.25;text-align:right}
+.browser-events{gap:8px;margin-top:0}
+.browser-day{border-top:1px solid var(--line);padding-top:9px}
+.browser-day-label{font:600 10px var(--sans);letter-spacing:.04em;color:var(--muted)}
+.browser-event{display:flex;flex-direction:column;gap:3px;margin-top:6px;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.browser-event-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:9px}
+.browser-event-heading{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-width:0}
+.browser-event-title{font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.browser-event-state{margin:0;padding:3px 6px;font-size:8px}
+.browser-event-meta{margin:0;font-size:10px;line-height:1.25}
+.browser-event-actions{display:flex;align-items:center;gap:6px}
+.browser-live-link{padding:5px 8px;font-size:10px}
+.browser-live-info>summary{width:24px;height:24px;font-size:12px}
+.browser-live-detail{position:absolute;z-index:2;top:calc(100% + 6px);right:0;width:min(250px,calc(100vw - 56px));margin:0;padding:8px 9px;border:1px solid #b9ddc2;border-radius:8px;background:#fff;color:#686868;font-size:11px;line-height:1.35;box-shadow:0 5px 18px #18181820}
+.browser-live-detail-visible{position:static;z-index:auto;display:block;width:auto;margin:3px 0 0;padding:6px 8px;border:1px solid #b9ddc2;border-left:3px solid #008a25;border-radius:0 7px 7px 0;background:#eef8f0;color:#008a25;font-size:10px;font-weight:800;line-height:1.35;box-shadow:none}
+.browser-live-detail-visible.is-active{border-color:#e6b7b1;border-left-color:#df3e3e;background:#fff4f2;color:#a53930}
+.browser-races{gap:6px;margin-top:5px}
+.browser-race{display:inline-flex;align-items:center;min-height:34px;padding:7px 9px;font-size:11px;text-align:left}
+.browser-calendar-details{margin-top:9px;padding-top:8px}
+.browser-calendar-details>summary{font-size:11px}
+.browser-date-row input{font-size:14px}
+.browser-shortcuts{margin-top:6px}
+.browser-status:empty{display:none}
+.browser-empty{font-size:11px;padding:6px 0}
+.selected-race[hidden]{display:none!important}
+@media(max-width:620px){
+  .picker-info-copy{width:min(250px,calc(100vw - 44px))}
+  .browser-head .field-label{font-size:12px}
+  .browser-head .browser-status{font-size:10px}
+  .browser-event{padding:9px}
+  .browser-event-title{font-size:12px}
+  .browser-event-top{gap:6px}
+  .browser-date-row{flex-direction:row;align-items:center}
+  .browser-date-row .button{width:auto;flex:none}
+  .browser-shortcuts .button{padding:6px 8px;font-size:10px}
+}
+
+/* Cabecera compacta: el logo de TKRC acompaña a «by» y mantiene la altura reducida. */
+.topbar{gap:4px 10px;margin-bottom:8px}
+.topbar .brand{min-height:0;padding:4px 0;gap:8px}
+.brand-wordmark{font-size:42px;line-height:1;letter-spacing:-3px}
+.topbar .brand-caption{font-size:17px}
+.topbar .brand-motto{display:flex;align-items:center;gap:3px;font-size:9px;line-height:1;white-space:nowrap;overflow:visible}
+.topbar .top-actions{display:flex;grid-template-columns:none;align-self:center;align-items:center;justify-content:flex-end;gap:8px;padding:0;flex-direction:row;flex-wrap:nowrap;transform:none}
+.topbar .app-update-control{width:var(--header-control-width,84px);max-width:none;flex:none;gap:0;align-items:stretch}
+.topbar .app-update-control #updateApp{box-sizing:border-box;width:100%;height:42px;min-height:42px;padding:4px 6px;border-radius:12px;font-size:12px;font-weight:700;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .brand-motto-logo{width:20px;height:10px;object-fit:cover;object-position:center;filter:invert(1)}
+.header-searches{padding-top:4px;padding-bottom:4px}
+@media(max-width:620px){
+ .topbar{gap:4px 6px;margin-bottom:8px}
+ .topbar .brand{margin-left:12px;min-height:0;padding:4px 0;gap:7px}
+ .brand-wordmark{font-size:clamp(32px,9vw,36px);letter-spacing:-2.6px}
+ .topbar .brand-caption{font-size:14px}
+ .topbar .brand-motto{font-size:8px}
+ .topbar .top-actions{margin-right:12px;gap:5px;flex-direction:row;align-items:center;justify-content:flex-end;padding:0;transform:none}
+ .topbar .revision-badge{font-size:9px}
+ .topbar .app-update-control #updateApp{height:34px;min-height:34px;padding:3px 4px;border-radius:10px;font-size:10px}
+ .header-searches{padding:4px 12px 5px;gap:4px}
+ .header-picker-summary,.topbar.selection-ready .header-picker-summary{height:34px;min-height:34px}
+ .topbar .brand-motto-logo{width:18px;height:9px}
+}
+
+/* Actualizar y Team igualan la medida compacta del botón Instalar, a la derecha. */
+.topbar .top-actions>.app-update-control,
+.topbar .top-actions>.app-install-control{box-sizing:border-box;width:clamp(74px,7vw,98px);min-width:clamp(74px,7vw,98px);max-width:clamp(74px,7vw,98px);flex:0 0 clamp(74px,7vw,98px)}
+.topbar .top-actions>#teamButton{box-sizing:border-box;width:clamp(74px,7vw,98px);min-width:clamp(74px,7vw,98px);max-width:clamp(74px,7vw,98px);flex:0 0 clamp(74px,7vw,98px);height:34px;min-height:34px;padding:2px 4px;border-radius:9px;font-size:11px;font-weight:700;line-height:1;white-space:nowrap}
+.topbar .top-actions .app-update-control #updateApp,
+.topbar .top-actions .app-install-control #installApp{box-sizing:border-box;width:100%;height:34px;min-height:34px;max-width:none;padding:2px 4px;border-radius:9px;font-size:11px;font-weight:700;line-height:1;white-space:nowrap}
+@media(max-width:620px){
+ .topbar .top-actions>.app-update-control,
+ .topbar .top-actions>.app-install-control{width:clamp(48px,14vw,56px);min-width:clamp(48px,14vw,56px);max-width:clamp(48px,14vw,56px);flex:0 0 clamp(48px,14vw,56px)}
+ .topbar .top-actions>#teamButton{width:clamp(48px,14vw,56px);min-width:clamp(48px,14vw,56px);max-width:clamp(48px,14vw,56px);flex:0 0 clamp(48px,14vw,56px);height:30px;min-height:30px;padding:2px 3px;border-radius:8px;font-size:8.5px}
+ .topbar .top-actions .app-update-control #updateApp,
+ .topbar .top-actions .app-install-control #installApp{height:30px;min-height:30px;padding:2px 3px;border-radius:8px;font-size:8.5px}
+}
+@media(max-width:380px){
+ .topbar .top-actions>.app-update-control,
+ .topbar .top-actions>.app-install-control{width:45px;min-width:45px;max-width:45px;flex:0 0 45px}
+ .topbar .top-actions>#teamButton{width:45px;min-width:45px;max-width:45px;flex:0 0 45px;font-size:8px;padding:2px}
+ .topbar .top-actions .app-update-control #updateApp,
+ .topbar .top-actions .app-install-control #installApp{font-size:8px;padding:2px}
+}
+
+/* Keep the Live timer and pilot schedule visible while Everlaps is connecting or awaiting a heat. */
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card{display:block!important;order:0;min-height:0;padding:12px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.live-standings-card{display:block!important;order:1}
+body.live-dashboard-ready .main-grid>.stack:first-child>.next-card{display:block!important;order:2;padding:12px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.phase-card{display:block!important;order:3}
+body.live-dashboard-ready.official-live-fallback .main-grid>.stack:first-child>.now-card{display:block!important;order:0}
+body.live-dashboard-ready.official-live-fallback .main-grid>.stack:first-child>.live-standings-card{order:1!important}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .card-head{margin-bottom:7px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-content{grid-template-columns:minmax(0,1fr);margin-top:6px;gap:6px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-value{max-width:100%;font-size:18px;margin:3px 0}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-desc{max-width:100%;font-size:11px;line-height:1.4}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-stats{gap:6px;margin-top:7px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-stat{padding:7px 8px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .race-symbol{display:none}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .live-clock-panel{margin-top:8px;padding:9px 10px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .live-clock-track{height:17px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .live-clock-labels{font-size:9px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .live-clock-note{margin-top:5px;font-size:9px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-foot{gap:8px;margin-top:8px;padding-top:8px;font-size:9px}
+body.live-dashboard-ready .main-grid>.stack:first-child>.next-card .live-next-section{display:grid;gap:10px}
+@media(max-width:620px){
+  body.live-dashboard-ready .main-grid>.stack:first-child>.now-card,
+  body.live-dashboard-ready .main-grid>.stack:first-child>.next-card,
+  body.live-dashboard-ready .main-grid>.stack:first-child>.phase-card{padding:11px}
+  body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-value{font-size:16px}
+  body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .now-desc{font-size:10px}
+  body.live-dashboard-ready .main-grid>.stack:first-child>.now-card .live-clock-track{height:18px}
+}
+
+/* Ranking y ANS sustituyen la vista de Carrera hasta que se cierran. */
+body.ranking-mode,
+body.ans-mode{overflow:hidden;overscroll-behavior:none}
+body.ranking-mode .intro,
+body.ranking-mode .welcome-screen,
+body.ranking-mode .dashboard-area,
+body.ranking-mode .setup-grid,
+body.ranking-mode .footnote,
+body.ans-mode .intro,
+body.ans-mode .welcome-screen,
+body.ans-mode .dashboard-area,
+body.ans-mode .setup-grid,
+body.ans-mode .footnote{display:none!important}
+.ranking-dialog{
+  position:fixed;inset:var(--topbar-height,160px) 0 0;box-sizing:border-box;
+  width:auto;height:auto;max-width:none;max-height:none;margin:0;
+  padding:12px max(12px,calc((100vw - 760px)/2));overflow-y:auto;
+  overscroll-behavior:contain;border:0;border-top:1px solid #e3e3e3;border-radius:0;
+  background:#fff;color:#262626;box-shadow:none
+}
+.ranking-dialog::backdrop{background:transparent}
+.ranking-dialog-content{width:100%;max-width:760px;margin:0 auto}
+#rankingButton[aria-expanded="true"]{border-color:var(--blue);box-shadow:0 0 0 2px #008a2520}
+body.ranking-mode #rankingDialog[open]{display:block}
+body.ans-mode #ansDialog[open]{
+  display:block;position:fixed;z-index:17;top:calc(var(--topbar-height,160px) + 8px);right:0;bottom:0;left:0;
+  box-sizing:border-box;width:auto;height:auto;max-width:none;max-height:none;margin:0;padding:0;
+  overflow:hidden;border:0;border-top:1px solid #e3e3e3;border-radius:0;background:#fff;box-shadow:none
+}
+body.ans-mode #ansDialog::backdrop{display:none}
+body.ans-mode #ansChampionshipButton{border-color:#008a25;box-shadow:0 0 0 3px #008a2520}
+@media(max-width:620px){
+  body.ans-mode #ansDialog[open]{top:calc(var(--topbar-height,160px) + 4px)}
+  body.ranking-mode #rankingDialog[open]{top:calc(var(--topbar-height,160px) + 4px);padding:10px 12px}
+}
+
+/* Warm neutral surfaces and the signature green; status colors remain semantic. */
+body{background:var(--bg);color:#242424}
+.topbar,.header-searches{background:#202020}
+.topbar .brand-wordmark{color:var(--evernote-green)}
+.topbar .brand-motto,.topbar .revision-badge{color:#d2d2d2}
+.card,.modal,.picker-popover{background:#fff}
+.now-card{background:#eef8f0}
+.race-symbol{background:var(--evernote-green);color:#fff}
+.toast{background:#242424;color:#fff}
+.status-dot{background:var(--evernote-green);box-shadow:0 0 8px #00a82d55}
+.sync-status[data-state=ready]::before{background:var(--evernote-green)}
+.sync-status[data-state=error]::before{background:#b82336}

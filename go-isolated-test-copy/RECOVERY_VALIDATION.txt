@@ -1,0 +1,4 @@
+Offline syntax and manifest checks passed.
+Missing local references:
+
+NOT a verified working clone. Backend /api routes are not included.
